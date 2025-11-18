@@ -170,12 +170,7 @@
 // // ==================-LeetCode-=====================
 // // Union-Find for connected components (processQueries)
 // // ==================-LeetCode-=====================
-// /**
-//  * @param {number} c
-//  * @param {number[][]} connections
-//  * @param {number[][]} queries
-//  * @return {number[]}
-//  */
+
 // var processQueries = function (c, connections, queries) {
 //     const parent = Array.from({ length: c }, (_, i) => i);
 //     const rank = Array(c).fill(1);
@@ -1008,3 +1003,123 @@
 // console.log(newObj);
 
 // // ==========================================================================================
+// // Array ichidagi objectlarni value bo‘yicha sort qiling
+// // ==========================================================================================
+
+// let arr = [{ age: 30 }, { age: 20 }, { age: 25 }];
+
+// let res = arr.sort((a, b) => a.age - b.age, 0);
+
+// let newObj = [];
+// for (const i of arr) {
+//     newObj.push(i);
+// }
+// console.log(newObj);
+
+// // ==========================================================================================
+// // Har bir elementni kvadratga ko‘paytiring
+// // ==========================================================================================
+
+// let arr = [1, 2, 3];
+
+// let newArr = [];
+// for (let i = 0; i < arr.length; i++) {
+//     const element = arr[i];
+//     let res = element * element;
+//     newArr.push(res);
+
+// }
+// console.log(newArr);
+
+// // ==========================================================================================
+// // Function debouncer yozing
+// // ==========================================================================================
+
+// // Debouncer ni input eventga bog'lash
+// const input = document.getElementById('searchInput');
+// const debouncedSearch = debounce(searchAPI, 500); // 500ms kutish
+
+// // ==========================================================================================
+// // Throttle function yozing
+// // ==========================================================================================
+
+//  window.removeEventListener('scroll', throttledScroll.current);
+
+// // ==========================================================================================
+// // Massiv ichidagi eng ko‘p takrorlangan elementni toping
+// // ==========================================================================================
+
+// let arr = [1, 1, 2, 3, 3, 3];
+
+// let counts = {};
+// for (let i = 0; i < arr.length; i++) {
+//     let value = arr[i];
+
+//     if (counts[value]) {
+//         counts[value]++
+//     } else {
+//         counts[value] = 1;
+//     }
+// }
+// let maxCount = 0;
+// let maxNumber = null;
+// for (let key in counts) {
+//     if (counts[key] > maxCount) {
+//         maxCount = counts[key];
+//         maxNumber = key;
+//     }
+// }
+
+// console.log(maxNumber);
+
+// // ==========================================================================================
+// // String ichidagi so‘zlar sonini hisoblang
+// // ==========================================================================================
+
+// let str = "I love JavaScript and PHP";
+
+// let count = 1;
+// for (const i in str) {
+//     if (str[i] === " ") {
+//         count++
+//         count += str[i]
+//     }
+// }
+// console.log(count);
+
+// // ==========================================================================================
+// // Promise qaytaradigan funksiyani yozing
+// // ==========================================================================================
+
+
+const myComp = async (data) => {
+    try {
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+myComp([1, 1, 2, 3, 3, 3])
+    .then(res => {
+        console.log("Natija:", res);
+    })
+    .catch(err => {
+        console.log("Xato:", err);
+    })
+    .finally(() => {
+        console.log("Tugadi");
+    });
+
+
+
+// // ==========================================================================================
+// // Massivni faqat unique qiymatlar bilan qaytaring (deep uniqueness)
+// // ==========================================================================================
+
+// let arr = [1, 2, 2, 3, [3, 4], [4, 4]] //→ [1,2,3,[3,4],[4]]
+
+// for (let i = 0; i < arr.length; i++) {
+//     const element = arr[i];
+//     console.log(element);
+// }
