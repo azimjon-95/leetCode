@@ -1092,24 +1092,24 @@
 // // ==========================================================================================
 
 
-const myComp = async (data) => {
-    try {
-        return data;
-    } catch (err) {
-        console.log(err);
-    }
-};
+// const myComp = async (data) => {
+//     try {
+//         return data;
+//     } catch (err) {
+//         console.log(err);
+//     }
+// };
 
-myComp([1, 1, 2, 3, 3, 3])
-    .then(res => {
-        console.log("Natija:", res);
-    })
-    .catch(err => {
-        console.log("Xato:", err);
-    })
-    .finally(() => {
-        console.log("Tugadi");
-    });
+// myComp([1, 1, 2, 3, 3, 3])
+//     .then(res => {
+//         console.log("Natija:", res);
+//     })
+//     .catch(err => {
+//         console.log("Xato:", err);
+//     })
+//     .finally(() => {
+//         console.log("Tugadi");
+//     });
 
 
 
@@ -1117,9 +1117,92 @@ myComp([1, 1, 2, 3, 3, 3])
 // // Massivni faqat unique qiymatlar bilan qaytaring (deep uniqueness)
 // // ==========================================================================================
 
-// let arr = [1, 2, 2, 3, [3, 4], [4, 4]] //→ [1,2,3,[3,4],[4]]
+// function uniqueDeep(arr) {
+//     const seen = new Set();
+//     const result = [];
 
-// for (let i = 0; i < arr.length; i++) {
-//     const element = arr[i];
-//     console.log(element);
+//     for (let item of arr) {
+//         if (Array.isArray(item)) {
+//             const uniqueInner = [...new Set(item)];
+//             result.push(uniqueInner);
+//         } else {
+//             if (!seen.has(item)) {
+//                 seen.add(item);
+//                 result.push(item);
+//             }
+//         }
+//     }
+
+//     return result;
 // }
+
+// let arr = [1, 2, 2, 3, [3, 4], [4, 4]];
+// console.log(uniqueDeep(arr));
+
+// // ==========================================================================================
+// // MakeCounter funksiyasini yozing.
+// // ==========================================================================================
+
+// function makeCounter() {
+//     let count = 0;
+
+//     return function () {
+//         count += 1;
+//         return count;
+//     }
+// }
+
+// const counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+// // ==========================================================================================
+// // Vowel count (unli harflar sanash).
+// // ==========================================================================================
+// vowels = a, e, i, o, u, A, E, I, O, U
+
+// const Vowel = (str) => {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u" || str[i] === "A" || str[i] === "E" || str[i] === "I" || str[i] === "O" || str[i] === "U") {
+//             count++
+//         }
+//     }
+//     return count;
+// }
+// console.log(Vowel("Hello"));
+// console.log(Vowel("JavaScript"));
+
+// // ==========================================================================================
+// // Faktoriyal (n!)
+// // ==========================================================================================
+
+// const factorial = (n) => {
+//     let res = 1;
+//     for (let i = 1; i <= n; i++) {
+//         res *= i
+//     }
+//     return res;
+// }
+
+// console.log(factorial(5));
+
+// // ==========================================================================================
+// // Prime number tekshirish
+// // ==========================================================================================
+
+// const isPrime = (n) => {
+//     if (n <= 1) return false;
+//     if (n === 2) return true;
+
+//     for (let i = 2; i < n; i++) {
+//         if (n % i === 0) {
+//             return false;
+//         }
+//     }
+//     return true
+// }
+
+// console.log(isPrime(7));
